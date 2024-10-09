@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Full height image slider */
+    .header {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: bgChange 10s infinite;
+    }
+
+    /* Keyframes for image changing effect */
+    @keyframes bgChange {
+      0% { background-image: url('https://picsum.photos/id/0/367/267'); }
+      33% { background-image: url('https://picsum.photos/id/1/367/267'); }
+      66% { background-image: url('https://picsum.photos/id/2/367/267'); }
+      100% { background-image: url('https://picsum.photos/id/3/367/267'); }
+    }
+
+    
+    /* Sidebar section styling */
+    .sidebar {
+      background-color: #f8f9fa;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    /* Services section hover effect */
+    .service-item {
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-item a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .service-item a:hover {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    /* Service image styling */
+    .service-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* Footer styling */
+    .footer {
+      background-color: black;
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .profile-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: white;
+      color: black;
+      border-radius: 50px;
+      margin-right: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .profile-link i {
+      margin-right: 5px;
+    }
+
+    .send-message-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    .send-message-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Social media icons styling */
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 24px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+
+    /* Send Message Modal */
+    .modal-header {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .modal-footer .btn-close {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .img-fluid {
+        border-radius: 15px;
+        width: 350px;
+        height: 300px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Carousel section styling */
+    .carousel-container {
+      margin: 50px 0;
+    }
+
+    .carousel-item-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .carousel-video {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      background-color: #000;
+    }
+
+    .carousel-video iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Existing content here -->
+   <!-- Navigation Menu -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Roc Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section with Changing Background -->
+  <header class="header d-flex align-items-center justify-content-center text-center text-white">
+    <div class="container">
+      <h1>Welcome to Your Website</h1>
+      <p>Your subtitle or tagline goes here</p>
+    </div>
+  </header>
+
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Main Content Area -->
+      <div class="col-md-8">
+        
+        <!-- About Section -->
+        <section id="about" class="my-5">
+            <h2>About Us</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <img src="https://picsum.photos/200" alt="About Us" class="img-fluid">
+              </div>
+              <div class="col-md-6">
+                <h4>Roc the Gallery</h4><br>
+                <p>
+                  This is where your about section text goes. You can write a brief paragraph about your business, services, or anything you want to highlight here. Keep it engaging and informative.
+                </p>
+                <p>This is my sample work.</p>
+              </div>
+            </div>
+          </section>
+
+        <!-- Services Section -->
+        <section id="services" class="my-5">
+          <h2>Our Services</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="service-item">
+                <a href="#service1">
+                  <img src="https://picsum.photos/200" alt="Service 1" class="service-img">
+                  <h5 class="mt-2">Service 1</h5>
+                  <p>Brief description of Service 1.</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="service-item">
+                <a href="#service2">
+                  <img src="https://picsum.photos/200" alt="Service 2" class="service-img">
+                  <h5 class="mt-2">Service 2</h5>
+                  <p>Brief description of Service 2.</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="service-item">
+                <a href="#service3">
+                  <img src="https://picsum.photos/200" alt="Service 3" class="service-img">
+                  <h5 class="mt-2">Service 3</h5>
+                  <p>Brief description of Service 3.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar Section -->
+      <div class="col-md-4 sidebar">
+        <h3>Blog Links</h3>
+        <ul class="list-unstyled">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Section -->
+  <section class="carousel-container container">
+    <h2>Gallery</h2>
+    <div id="mediaCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/600/400?image=10" class="d-block w-100 carousel-img" alt="Image 1">
+          <p class="carousel-item-text">Image 1 Description</p>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-video">
+            <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <p class="carousel-item-text">Video 1 Description</p>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/600/400?image=20" class="d-block w-100 carousel-img" alt="Image 2">
+          <p class="carousel-item-text">Image 2 Description</p>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <h2>Let's work together!</h2>
+    <a href="https://example.com/profile" class="profile-link"><i class="bi bi-person-circle"></i> View Profile</a>
+    <button class="send-message-btn" data-bs-toggle="modal" data-bs-target="#sendMessageModal">Send Message</button>
+    <div class="social-icons">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-twitter"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- Send Message Modal -->
+  <div class="modal fade" id="sendMessageModal" tabindex="-1" aria-labelledby="sendMessageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="sendMessageModalLabel">Send Message</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-close" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
